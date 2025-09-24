@@ -1,0 +1,15 @@
+:root {
+  --color-neutral: oklch(91.8% 0.024 104);
+  --color-base: oklch(58.3% 0.046 142);
+  --color-accent: oklch(46% 0.043 144);
+
+  --radius: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-neutral: oklch(31.3% 0.027 145);
+    --color-base: oklch(75% 0.046 142);
+    --color-accent: oklch(80% 0.043 144);
+  }
+}
