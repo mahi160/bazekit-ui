@@ -50,10 +50,15 @@ export const Variants: Story = {
         alignItems: "center",
         flexWrap: "wrap",
       }}
+      data-color="red"
     >
       <Button>Default</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="outlined">Outlined</Button>
+      <Button variant="accent">Accent</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="alert">Alert</Button>
+      <Button variant="outline">Outlined</Button>
+      <Button variant="link">Link</Button>
+      <Button disabled>Disabled</Button>
     </div>
   ),
 };
@@ -62,7 +67,7 @@ export const Sizes: Story = {
   render: () => (
     <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
       <Button size="sm">Small</Button>
-      <Button size="md">Default</Button>
+      <Button>Default</Button>
       <Button size="lg">Large</Button>
     </div>
   ),

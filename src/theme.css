@@ -1,15 +1,99 @@
 :root {
-  --color-neutral: oklch(91.8% 0.024 104);
-  --color-base: oklch(58.3% 0.046 142);
-  --color-accent: oklch(46% 0.043 144);
+  --brand: oklch(58% 0.16 250); /* Default blue */
+  --accent: oklch(75% 0.15 80); /* Default yellow-green */
+  --alert: oklch(65% 0.2 25); /* Default red */
+
+  --surface: oklch(98% 0.01 250); /* Light blue-gray */
+  --content: oklch(15% 0.01 250); /* Dark blue-gray */
 
   --radius: 0.25rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-neutral: oklch(31.3% 0.027 145);
-    --color-base: oklch(75% 0.046 142);
-    --color-accent: oklch(80% 0.043 144);
-  }
+[data-theme="dark"] {
+  --brand: oklch(65% 0.16 250);
+  --accent: oklch(78% 0.15 80);
+  --alert: oklch(68% 0.2 25);
+
+  --surface: oklch(15% 0.01 250);
+  --content: oklch(95% 0.01 250);
+}
+
+[data-theme="oceanic-breeze"] {
+  --brand: oklch(60% 0.15 220); /* Deep teal */
+  --accent: oklch(75% 0.12 170); /* Mint green */
+  --alert: oklch(65% 0.18 10); /* Coral red */
+
+  --surface: oklch(98% 0.01 200); /* Light blue-gray */
+  --content: oklch(15% 0.02 220); /* Dark slate blue */
+
+  --radius: 0.25rem;
+}
+
+[data-theme="oceanic-breeze-dark"] {
+  --brand: oklch(68% 0.15 220); /* Lighter teal */
+  --accent: oklch(80% 0.12 170); /* Brighter mint */
+  --alert: oklch(70% 0.18 10); /* Brighter coral */
+
+  --surface: oklch(20% 0.02 220); /* Dark blue-gray */
+  --content: oklch(95% 0.01 200); /* Off-white */
+}
+
+[data-theme="sunset-glow"] {
+  --brand: oklch(62% 0.18 30); /* Warm orange */
+  --accent: oklch(78% 0.14 340); /* Soft pink */
+  --alert: oklch(65% 0.2 0); /* Deep red */
+
+  --surface: oklch(97% 0.01 40); /* Pale peach */
+  --content: oklch(15% 0.02 340); /* Dark purple */
+
+  --radius: 0.25rem;
+}
+
+[data-theme="sunset-glow-dark"] {
+  --brand: oklch(70% 0.18 30); /* Brighter orange */
+  --accent: oklch(82% 0.14 340); /* Brighter pink */
+  --alert: oklch(70% 0.2 0); /* Brighter red */
+
+  --surface: oklch(18% 0.02 340); /* Dark purple-gray */
+  --content: oklch(94% 0.01 40); /* Off-white with warm tint */
+}
+
+[data-theme="forest-retreat"] {
+  --brand: oklch(55% 0.14 150); /* Forest green */
+  --accent: oklch(75% 0.1 90); /* Golden olive */
+  --alert: oklch(65% 0.18 20); /* Rust red */
+
+  --surface: oklch(98% 0.01 120); /* Light sage */
+  --content: oklch(15% 0.02 150); /* Deep green */
+
+  --radius: 0.25rem;
+}
+
+[data-theme="forest-retreat-dark"] {
+  --brand: oklch(62% 0.14 150); /* Lighter green */
+  --accent: oklch(80% 0.1 90); /* Brighter gold */
+  --alert: oklch(70% 0.18 20); /* Brighter rust */
+
+  --surface: oklch(20% 0.02 150); /* Dark mossy green */
+  --content: oklch(95% 0.01 120); /* Off-white with green tint */
+}
+
+[data-theme="cosmic-night"] {
+  --brand: oklch(58% 0.16 270); /* Rich purple */
+  --accent: oklch(75% 0.14 200); /* Cyan blue */
+  --alert: oklch(65% 0.2 350); /* Magenta */
+
+  --surface: oklch(98% 0.01 260); /* Pale lavender */
+  --content: oklch(15% 0.02 270); /* Dark purple */
+
+  --radius: 0.25rem;
+}
+
+[data-theme="cosmic-night-dark"] {
+  --brand: oklch(65% 0.16 270); /* Brighter purple */
+  --accent: oklch(80% 0.14 200); /* Brighter cyan */
+  --alert: oklch(70% 0.2 350); /* Brighter magenta */
+
+  --surface: oklch(15% 0.02 270); /* Dark nebula purple */
+  --content: oklch(95% 0.01 260); /* Off-white with blue tint */
 }
