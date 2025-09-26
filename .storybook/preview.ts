@@ -1,5 +1,5 @@
 import type { Preview } from "@storybook/react-vite";
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
+import { withThemeByDataAttribute } from "@storybook/addon-themes";
 import "../src/index.css";
 
 const preview: Preview = {
@@ -18,27 +18,18 @@ const preview: Preview = {
       test: "todo",
     },
   },
-  
+
   // Add decorator for theme selection
   decorators: [
     withThemeByDataAttribute({
       themes: {
-        default: '',
-        dark: 'dark',
-        'oceanic-breeze': 'oceanic-breeze',
-        'oceanic-breeze-dark': 'oceanic-breeze-dark',
-        'sunset-glow': 'sunset-glow',
-        'sunset-glow-dark': 'sunset-glow-dark',
-        'forest-retreat': 'forest-retreat',
-        'forest-retreat-dark': 'forest-retreat-dark',
-        'cosmic-night': 'cosmic-night',
-        'cosmic-night-dark': 'cosmic-night-dark'
+        default: "",
+        dark: "dark",
       },
-      defaultTheme: 'default',
-      attributeName: 'data-theme',
-    })
+      defaultTheme: "default",
+      attributeName: "data-theme",
+    }),
   ],
 };
 
 export default preview;
-

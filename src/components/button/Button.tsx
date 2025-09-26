@@ -2,8 +2,8 @@ import styles from "./Button.module.css";
 
 export interface IButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  size?: "default" | "sm" | "lg" | "icon";
-  variant?: "default" | "accent" | "alert" | "outline" | "ghost" | "link";
+  size?: "sm" | "md" | "lg" | "icon";
+  variant?: "default" | "secondary" | "alert" | "outline" | "ghost" | "link";
 }
 
 export const Button: React.FC<IButtonProps> = (props) => {

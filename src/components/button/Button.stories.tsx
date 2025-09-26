@@ -53,7 +53,7 @@ export const Variants: Story = {
       data-color="red"
     >
       <Button>Default</Button>
-      <Button variant="accent">Accent</Button>
+      <Button variant="secondary">Secondary</Button>
       <Button variant="ghost">Ghost</Button>
       <Button variant="alert">Alert</Button>
       <Button variant="outline">Outlined</Button>
