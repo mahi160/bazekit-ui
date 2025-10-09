@@ -1,19 +1,19 @@
 :root {
-  --brand: oklch(50% 0.14 250); /* Steel blue */
-  --accent: oklch(70% 0.14 50); /* Amber */
-  --alert: oklch(58% 0.22 25); /* Red */
-  --surface: oklch(99% 0.005 250);
-  --content: oklch(18% 0.015 250);
-  --contrast: oklch(99% 0.005 250);
+  --brand: oklch(60% 0.13 160); /* Earthy forest green */
+  --accent: oklch(70% 0.12 40); /* Warm amber */
+  --alert: oklch(65% 0.14 300); /* Soft lavender */
+  --surface: oklch(97% 0.01 160); /* Off-white with a subtle green tint */
+  --content: oklch(20% 0.02 160); /* Deep slate for text */
+  --contrast: oklch(100% 0 0); /* Pure white for high contrast */
 
   --radius: 0.25rem;
 }
 
 [data-theme="dark"] {
-  --brand: oklch(60% 0.14 250);
-  --accent: oklch(78% 0.14 70);
-  --alert: oklch(60% 0.22 25);
-  --surface: oklch(20% 0.015 250); /* Softer dark surface */
-  --content: oklch(94% 0.005 250); /* Slightly warmer text balance */
-  --contrast: oklch(96% 0.005 250);
+  --brand: oklch(65% 0.14 160); /* Brighter forest green */
+  --accent: oklch(75% 0.13 40); /* Richer amber */
+  --alert: oklch(70% 0.15 300); /* Brighter lavender */
+  --surface: oklch(22% 0.02 160); /* Dark mossy green */
+  --content: oklch(90% 0.01 160); /* Light gray-green for text */
+  --contrast: oklch(94% 0.01 160); /* Soft white for contrast */
 }
