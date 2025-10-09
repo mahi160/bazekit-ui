@@ -12,6 +12,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
     className,
     size = 'default',
     variant = 'default',
+    type = 'button',
     ...rest
   } = props
   const classes = [styles.button, className].filter(Boolean).join(' ')
@@ -21,6 +22,7 @@ export const Button: React.FC<IButtonProps> = (props) => {
       className={classes}
       data-size={size}
       data-variant={variant}
+      type={type}
       {...rest}
     >
       {children}
