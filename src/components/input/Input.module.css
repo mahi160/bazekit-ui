@@ -35,8 +35,8 @@ input::selection {
   }
 }
 
-input[type="file"]::-webkit-file-upload-button,
-input[type="file"]::file-selector-button {
+input[type='file']::-webkit-file-upload-button,
+input[type='file']::file-selector-button {
   display: inline-flex;
   height: 1.75rem;
   border: none;
@@ -51,13 +51,13 @@ input:focus-visible {
   box-shadow: 0 0 0 3px rgba(var(--ring, 59, 130, 246), 0.5);
 }
 
-input[aria-invalid="true"] {
+input[aria-invalid='true'] {
   border-color: var(--destructive, #dc2626);
   box-shadow: 0 0 0 3px rgba(var(--destructive, 220, 38, 38), 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
-  input[aria-invalid="true"] {
+  input[aria-invalid='true'] {
     box-shadow: 0 0 0 3px rgba(var(--destructive, 220, 38, 38), 0.4);
   }
 }

@@ -1,18 +1,17 @@
 :root {
-  --brand: oklch(58% 0.14 170);  /* mossy teal – primary brand */
+  --brand: oklch(58% 0.14 170); /* mossy teal – primary brand */
   --accent: oklch(78% 0.15 100); /* leaf yellow-green – highlight/accent */
-  --alert: oklch(60% 0.18 30);   /* earthy red – error or destructive */
+  --alert: oklch(60% 0.18 30); /* earthy red – error or destructive */
   --surface: oklch(98% 0.01 180); /* subtle warm off-white background */
   --content: oklch(22% 0.015 180); /* deep neutral text */
   --contrast: oklch(96% 0.005 180); /* for elevated elements like cards */
   --radius: 0.3rem;
 }
 
-
-[data-theme="dark"] {
---brand: oklch(70% 0.14 170);  /* brightened teal for contrast */
+[data-theme='dark'] {
+  --brand: oklch(70% 0.14 170); /* brightened teal for contrast */
   --accent: oklch(82% 0.15 100); /* vivid green accent – lively on dark */
-  --alert: oklch(68% 0.18 30);   /* warmer red to stay legible on dark */
+  --alert: oklch(68% 0.18 30); /* warmer red to stay legible on dark */
   --surface: oklch(22% 0.02 180); /* deep forest gray-green background */
   --content: oklch(92% 0.015 180); /* readable, slightly warm text */
   --contrast: oklch(94% 0.01 180); /* light surfaces like modals or cards */

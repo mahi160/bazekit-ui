@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Input } from "./Input";
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { Input } from './Input'
 
 const meta: Meta<typeof Input> = {
-  title: "Components/Input",
+  title: 'Components/Input',
   component: Input,
   //   parameters: {
   //     docs: {
@@ -30,11 +30,11 @@ const meta: Meta<typeof Input> = {
   //       description: "Click event handler",
   //     },
   //   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof Input>;
+export default meta
+type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
   render: () => <Input placeholder="Enter text" />,
-};
+}
