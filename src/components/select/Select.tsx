@@ -1,6 +1,6 @@
 import styles from './Select.module.css'
 
-export interface SelectProps 
+export interface SelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement> {
   options?: Array<{
     value: string
@@ -15,19 +15,21 @@ export const Select: React.FC<SelectProps> = (props) => {
 
   return (
     <select className={combinedClassName} {...rest}>
-      {options ? (
-        options.map(option => (
-          <option 
-            key={option.value} 
-            value={option.value} 
-            disabled={option.disabled}
-          >
-            {option.label}
-          </option>
-        ))
-      ) : (
-        children
-      )}
+      {options
+        ? (
+            options.map(option => (
+              <option
+                key={option.value}
+                value={option.value}
+                disabled={option.disabled}
+              >
+                {option.label}
+              </option>
+            ))
+          )
+        : (
+            children
+          )}
     </select>
   )
 }

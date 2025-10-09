@@ -3,6 +3,21 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "main": "./dist/bizkit-ui.umd.js",
+  "module": "./dist/bizkit-ui.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/bizkit-ui.es.js",
+      "require": "./dist/bizkit-ui.umd.js"
+    },
+    "./dist/index.css": "./dist/index.css"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -b && vite build",
     "lint": "eslint .",
@@ -11,7 +26,7 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@base-ui-components/react": "1.0.0-beta.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
@@ -41,6 +56,7 @@
     "storybook": "^9.1.8",
     "typescript": "~5.8.3",
     "vite": "npm:rolldown-vite@7.1.12",
+    "vite-bundle-analyzer": "^1.2.3",
     "vitest": "^3.2.4"
   },
   "pnpm": {

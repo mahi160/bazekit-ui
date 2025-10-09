@@ -1,16 +1,16 @@
 import styles from './Progress.module.css'
 
-export interface ProgressProps {
+export interface ProgressProps extends React.ProgressHTMLAttributes<HTMLProgressElement> {
   // Add props here
 }
 
 export const Progress: React.FC<ProgressProps> = (props) => {
-  const { className, ...rest } = props;
-  const combinedClassName = [styles.progress, className].filter(Boolean).join(' ');
-  
+  const { className, ...rest } = props
+  const combinedClassName = [styles.progress, className].filter(Boolean).join(' ')
+
   return (
-    <div className={combinedClassName} {...rest}>
+    <progress className={combinedClassName} {...rest}>
       {/* Component implementation */}
-    </div>
-  );
+    </progress>
+  )
 }

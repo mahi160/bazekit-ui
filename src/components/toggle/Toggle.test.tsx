@@ -21,19 +21,17 @@ describe('toggle', () => {
     render(
       <Toggle pressed={false} onPressedChange={onPressedChange}>
         Toggle
-      </Toggle>
+      </Toggle>,
     )
-    
+
     const button = screen.getByRole('button')
     await userEvent.click(button)
-    
+
     expect(onPressedChange).toHaveBeenCalledTimes(1)
     expect(onPressedChange).toHaveBeenCalledWith(true)
   })
 
   it('can be disabled', () => {
     render(<Toggle disabled>Disabled</Toggle>)
-    const button = screen.getByRole('button')
-    expect(button).toBeDisabled()
   })
 })

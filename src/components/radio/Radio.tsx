@@ -12,11 +12,11 @@ export const Radio: React.FC<RadioProps> = (props) => {
 
   return (
     <div className={styles.container}>
-      <input 
-        type="radio" 
-        className={combinedClassName} 
+      <input
+        type="radio"
+        className={combinedClassName}
         id={radioId}
-        {...rest} 
+        {...rest}
       />
       {label && (
         <label htmlFor={radioId} className={styles.label}>

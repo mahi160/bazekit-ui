@@ -1,16 +1,16 @@
 import styles from './Popover.module.css'
 
-export interface PopoverProps {
+export interface PopoverProps extends React.HTMLAttributes<HTMLDivElement> {
   // Add props here
 }
 
 export const Popover: React.FC<PopoverProps> = (props) => {
-  const { className, ...rest } = props;
-  const combinedClassName = [styles.popover, className].filter(Boolean).join(' ');
-  
+  const { className, ...rest } = props
+  const combinedClassName = [styles.popover, className].filter(Boolean).join(' ')
+
   return (
     <div className={combinedClassName} {...rest}>
       {/* Component implementation */}
     </div>
-  );
+  )
 }

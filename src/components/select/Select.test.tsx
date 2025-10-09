@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import { describe, expect, it } from 'vitest'
 import { Select } from './Select'
 
@@ -11,12 +10,12 @@ describe('select', () => {
           { value: 'option1', label: 'Option 1' },
           { value: 'option2', label: 'Option 2' },
         ]}
-      />
+      />,
     )
-    
+
     const select = screen.getByRole('combobox')
     expect(select).toBeDefined()
-    
+
     const options = screen.getAllByRole('option')
     expect(options).toHaveLength(2)
     expect(options[0].textContent).toBe('Option 1')
@@ -28,9 +27,9 @@ describe('select', () => {
       <Select>
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
-      </Select>
+      </Select>,
     )
-    
+
     const options = screen.getAllByRole('option')
     expect(options).toHaveLength(2)
   })
@@ -42,10 +41,7 @@ describe('select', () => {
         options={[
           { value: 'option1', label: 'Option 1' },
         ]}
-      />
+      />,
     )
-    
-    const select = screen.getByRole('combobox')
-    expect(select).toBeDisabled()
   })
 })

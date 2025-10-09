@@ -1,16 +1,16 @@
 import styles from './Alert.module.css'
 
-export interface AlertProps {
+export interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
   // Add props here
 }
 
 export const Alert: React.FC<AlertProps> = (props) => {
-  const { className, ...rest } = props;
-  const combinedClassName = [styles.alert, className].filter(Boolean).join(' ');
-  
+  const { className, ...rest } = props
+  const combinedClassName = [styles.alert, className].filter(Boolean).join(' ')
+
   return (
     <div className={combinedClassName} {...rest}>
       {/* Component implementation */}
     </div>
-  );
+  )
 }

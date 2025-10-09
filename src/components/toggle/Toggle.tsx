@@ -16,9 +16,9 @@ export const Toggle: React.FC<ToggleProps> = (props) => {
     onPressedChange,
     ...rest
   } = props
-  
+
   const combinedClassName = [styles.toggle, className].filter(Boolean).join(' ')
-  
+
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     props.onClick?.(e)
     if (!e.defaultPrevented && onPressedChange) {

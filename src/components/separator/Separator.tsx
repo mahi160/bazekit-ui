@@ -1,16 +1,14 @@
 import styles from './Separator.module.css'
 
-export interface SeparatorProps {
+export interface SeparatorProps extends React.HTMLAttributes<HTMLHRElement> {
   // Add props here
 }
 
 export const Separator: React.FC<SeparatorProps> = (props) => {
-  const { className, ...rest } = props;
-  const combinedClassName = [styles.separator, className].filter(Boolean).join(' ');
-  
+  const { className, ...rest } = props
+  const combinedClassName = [styles.separator, className].filter(Boolean).join(' ')
+
   return (
-    <div className={combinedClassName} {...rest}>
-      {/* Component implementation */}
-    </div>
-  );
+    <hr className={combinedClassName} {...rest} />
+  )
 }

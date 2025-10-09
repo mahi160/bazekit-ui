@@ -12,11 +12,11 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
 
   return (
     <div className={styles.container}>
-      <input 
-        type="checkbox" 
-        className={combinedClassName} 
+      <input
+        type="checkbox"
+        className={combinedClassName}
         id={checkboxId}
-        {...rest} 
+        {...rest}
       />
       {label && (
         <label htmlFor={checkboxId} className={styles.label}>

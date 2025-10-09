@@ -1,16 +1,16 @@
 import styles from './Badge.module.css'
 
-export interface BadgeProps {
+export interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   // Add props here
 }
 
 export const Badge: React.FC<BadgeProps> = (props) => {
-  const { className, ...rest } = props;
-  const combinedClassName = [styles.badge, className].filter(Boolean).join(' ');
-  
+  const { className, ...rest } = props
+  const combinedClassName = [styles.badge, className].filter(Boolean).join(' ')
+
   return (
     <div className={combinedClassName} {...rest}>
       {/* Component implementation */}
     </div>
-  );
+  )
 }

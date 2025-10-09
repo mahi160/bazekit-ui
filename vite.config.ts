@@ -1,10 +1,10 @@
 import path from 'node:path'
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
-
+import { analyzer } from 'vite-bundle-analyzer'
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), analyzer()],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
@@ -12,11 +12,13 @@ export default defineConfig({
       fileName: format => `bizkit-ui.${format}.js`,
     },
     rolldownOptions: {
-      external: ['react', 'react-dom'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', '@base-ui-components/react'],
       output: {
         globals: {
           react: 'React',
           reactDom: 'ReactDOM',
+          reactJsxRuntime: 'react/jsx-runtime',
+          baseUiComponentsReact: 'BaseUIComponentsReact',
         },
       },
     },

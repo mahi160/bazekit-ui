@@ -16,7 +16,7 @@ describe('button', () => {
   })
 
   it('applies correct variant attribute', () => {
-    render(<Button variant="outlined">Outlined Button</Button>)
+    render(<Button variant="outline">Outlined Button</Button>)
     const button = screen.getByRole('button')
     expect(button.getAttribute('data-variant')).toBe('outlined')
   })
