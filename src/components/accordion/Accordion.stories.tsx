@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   render: () => (
-    <div style={{ maxWidth: 400, background: 'white', padding: 20 }}>
+    <div style={{ maxWidth: 400, padding: 20, border: '2px solid var(--border)', borderRadius: 'var(--radius)' }}>
       <Accordion defaultValue={['item-2']} openMultiple={false}>
         <AccordionItem value="item-1">
           <AccordionTrigger>Dunder Mifflin Info</AccordionTrigger>

@@ -1,18 +1,19 @@
 :root {
-  --brand: oklch(58% 0.14 170); /* mossy teal – primary brand */
-  --accent: oklch(78% 0.15 100); /* leaf yellow-green – highlight/accent */
-  --alert: oklch(60% 0.18 30); /* earthy red – error or destructive */
-  --surface: oklch(98% 0.01 180); /* subtle warm off-white background */
-  --content: oklch(22% 0.015 180); /* deep neutral text */
-  --contrast: oklch(96% 0.005 180); /* for elevated elements like cards */
-  --radius: 0.5rem;
+  --brand: oklch(55% 0.20 250);   /* Electric blue – strong, trustworthy */
+  --accent: oklch(65% 0.14 190); /* Calm teal */
+  --alert: oklch(58% 0.23 25);    /* Coral red – friendly but attention-grabbing */
+  --surface: oklch(99% 0 250);    /* Pure neutral white surface */
+  --content: oklch(22% 0 250);    /* Deep neutral text color */
+  --contrast: oklch(98% 0 250);   /* Light text for brand-colored surfaces */
+
+  --radius: 0.375rem;
 }
 
 [data-theme='dark'] {
-  --brand: oklch(70% 0.14 170); /* brightened teal for contrast */
-  --accent: oklch(82% 0.15 100); /* vivid green accent – lively on dark */
-  --alert: oklch(68% 0.18 30); /* warmer red to stay legible on dark */
-  --surface: oklch(22% 0.02 180); /* deep forest gray-green background */
-  --content: oklch(92% 0.015 180); /* readable, slightly warm text */
-  --contrast: oklch(94% 0.01 180); /* light surfaces like modals or cards */
+  --brand: oklch(70% 0.22 250);   /* Slightly brighter for glow on dark surfaces */
+  --accent: oklch(70% 0.16 190); /* Brighter teal glow */
+  --alert: oklch(65% 0.25 30);    /* Warm red-orange for visual balance */
+  --surface: oklch(18% 0 250);    /* Deep neutral background */
+  --content: oklch(88% 0 250);    /* Neutral off-white text */
+  --contrast: oklch(15% 0 250);   /* Dark text for brand-colored surfaces */
 }
