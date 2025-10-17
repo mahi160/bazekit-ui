@@ -1,52 +1,49 @@
 import { Accordion as BaseAccordion } from '@base-ui-components/react'
 import style from './Accordion.module.css'
 
-function Accordion({
-  ...props
-}: BaseAccordion.Root.Props) {
+export interface AccordionProps extends BaseAccordion.Root.Props { }
+export interface AccordionItemProps extends BaseAccordion.Item.Props { }
+export interface AccordionTriggerProps extends BaseAccordion.Trigger.Props { }
+export interface AccordionPanelProps extends BaseAccordion.Panel.Props { }
+
+export function Accordion(props: AccordionProps) {
   return <BaseAccordion.Root className={style.accordion} {...props} />
 }
 
-function AccordionItem({
-  ...props
-}: BaseAccordion.Item.Props) {
-  return (
-    <BaseAccordion.Item
-      className={style.accordionItem}
-      {...props}
-    />
-  )
+export function AccordionItem(props: AccordionItemProps) {
+  return <BaseAccordion.Item className={style.accordionItem} {...props} />
 }
 
-function AccordionTrigger({
+export function AccordionTrigger({
   children,
   ...props
-}: BaseAccordion.Trigger.Props) {
+}: AccordionTriggerProps) {
   return (
     <BaseAccordion.Header className={style.accordionTriggerHeader}>
-      <BaseAccordion.Trigger
-        className={style.accordionTrigger}
-        {...props}
-      >
+      <BaseAccordion.Trigger className={style.accordionTrigger} {...props}>
         {children}
-        <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></svg>
+        <ChevronIcon />
       </BaseAccordion.Trigger>
     </BaseAccordion.Header>
   )
 }
 
-function AccordionPanel({
+export function AccordionPanel({
   children,
   ...props
-}: BaseAccordion.Panel.Props) {
+}: AccordionPanelProps) {
   return (
-    <BaseAccordion.Panel
-      className={style.accordionPanel}
-      {...props}
-    >
+    <BaseAccordion.Panel className={style.accordionPanel} {...props}>
       <div className={style.accordionInner}>{children}</div>
     </BaseAccordion.Panel>
   )
 }
 
-export { Accordion, AccordionItem, AccordionPanel, AccordionTrigger }
+function ChevronIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className={style.chevronIcon} aria-hidden="true">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  )
+}
+
