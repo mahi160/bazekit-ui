@@ -8,32 +8,29 @@ const meta: Meta<typeof Button> = {
     docs: {
       description: {
         component: `
-A versatile button component that serves as a primary interaction element in user interfaces.
+A versatile button component that clicks, clacks, and occasionally gets stuck in Jell-O.
 
 ## Overview
-The Button component is a styled wrapper around the native HTML \`<button>\` element.
-It provides consistent styling, various visual variants, and size options.
+The Button is your go-to for all things clickable. It's a styled wrapper around the native HTML \`<button>\` element, but with more personality than a beet farmer. It provides consistent styling, various visual variants, and size options for every occasion, from a "that's what she said" to a "Bears, Beets, Battlestar Galactica."
 
 ## Features
-- Multiple visual variants (default, secondary, alert, outline, ghost, link)
-- Multiple size options (small, default, large, icon)
-- Customizable with theme tokens
-- Automatic light/dark mode adaptation
-- Accessible focus states
-- Full support for all native button props
+- **Variants for Every Mood**: From 'default' (classic Jim Halpert smirk) to 'alert' (Dwight discovering a stapler in Jell-O).
+- **Sizes for Every Situation**: 'small' (a subtle glance at the camera), 'default' (a standard Dundie Award), and 'large' (Michael's "World's Best Boss" mug).
+- **Theme-Ready**: Adapts to light and dark modes faster than Creed changes his identity.
+- **Accessible**: So easy to use, even Kevin could do it. Probably.
+- **Native Props**: All the power of a regular button, but with the spirit of Dunder Mifflin.
 
 ## Accessibility
-- Uses native \`<button>\` element
-- Visible focus states
-- Proper color contrast ratios
-- Keyboard navigation support
+- Built on a native \`<button>\` element, because some things are perfect as they are.
+- Clear focus states, so you always know where you're clicking.
+- Keyboard-friendly, for all the power users out there.
 
 ## Usage Guidelines
-- **Default**: Primary actions
-- **Secondary**: Secondary actions
-- **Alert**: Destructive actions
-- **Outline/Ghost**: Less prominent actions
-- **Link**: Navigation-like actions
+- **Default**: For your everyday, run-of-the-mill "that's what she said."
+- **Secondary**: When you need a solid backup plan, like Jim's pranks.
+- **Alert**: For those "NO, GOD, PLEASE, NO!" moments.
+- **Outline/Ghost**: For actions that are more subtle, like Pam's art.
+- **Link**: When you need to hyperlink to your beet farm.
         `,
       },
     },
@@ -91,7 +88,7 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   args: {
-    children: 'Button',
+    children: 'Bears, Beets, Battlestar Galactica',
   },
 }
 
@@ -105,13 +102,13 @@ export const Variants: Story = {
   },
   render: () => (
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
-      <Button>Default</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="alert">Alert</Button>
-      <Button variant="outline">Outlined</Button>
-      <Button variant="link">Link</Button>
-      <Button disabled>Disabled</Button>
+      <Button>Michael Scott</Button>
+      <Button variant="secondary">Pam Beesly</Button>
+      <Button variant="ghost">Jim Halpert</Button>
+      <Button variant="alert">Dwight Schrute</Button>
+      <Button variant="outline">Angela Martin</Button>
+      <Button variant="link">Creed Bratton</Button>
+      <Button disabled>Toby Flenderson</Button>
     </div>
   ),
 }
@@ -120,7 +117,7 @@ export const Sizes: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Buttons are available in three sizes: small, default, and large.',
+        story: 'Buttons come in all shapes and sizes, just like Michael\'s jokes.Here are a few to get you started.',
       },
     },
   },
