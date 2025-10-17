@@ -26,7 +26,7 @@
   background: none;
   border: none;
   color: inherit;
-  
+
   &:hover {
     text-decoration: underline;
   }
@@ -50,8 +50,8 @@
     transform: translateY(0.125rem);
     transition: transform var(--duration) ease-out;
   }
-  
-  &[data-panel-open]> svg {
+
+  &[data-panel-open] > svg {
     transform: translateY(0.125rem) rotate(180deg);
   }
 }
@@ -72,4 +72,3 @@
   padding-inline: 0.5rem;
   padding-block: 0 1rem;
 }
-
