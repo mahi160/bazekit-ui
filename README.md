@@ -10,3 +10,15 @@
 - Minimal and clean color palette. Derived css variables inspired by Shadcn UI.
 - Highly customizable.
 - Focus on performance and usability.
+
+## Rules
+
+### JavaScript/TypeScript
+
+### CSS
+
+- CSS should be clean and minimal.
+
+### Testing
+
+- Every component must have `data-testid` attributes for all interactive elements.

@@ -5,7 +5,7 @@
   --surface: oklch(98% 0.01 180); /* subtle warm off-white background */
   --content: oklch(22% 0.015 180); /* deep neutral text */
   --contrast: oklch(96% 0.005 180); /* for elevated elements like cards */
-  --radius: 0.3rem;
+  --radius: 0.5rem;
 }
 
 [data-theme='dark'] {

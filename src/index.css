@@ -15,6 +15,9 @@
   --danger-foreground: var(--contrast);
 
   --focus: oklch(from var(--primary) l c h / 0.5);
+  --border: oklch(from var(--content) l c h / 0.2);
+
+  --duration: 200ms;
 }
 
 body {
