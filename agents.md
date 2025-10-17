@@ -26,11 +26,6 @@ component-name/
    - Use React.FC type for functional components
    - Use data attributes for styling variants (e.g., data-variant, data-size)
    - Export both the component and its props interface
-   - Include comprehensive JSDoc comments for:
-     - Component interfaces/types
-     - Props (with @default annotations)
-     - The main component (with @example usage)
-     - Any helper functions
 
 2. **Component Styles (ComponentName.module.css)**
    - Use CSS modules for component-scoped styles
@@ -107,67 +102,7 @@ Each component's Storybook documentation should include:
    - When to use alternatives
    - Best practices for implementation
 
-## JSDoc Guidelines
 
-To ensure excellent IDE support and code documentation, all components should include comprehensive JSDoc comments:
-
-1. **Interface/Type Documentation**
-
-   ```typescript
-   /**
-    * Props for the ComponentName component.
-    * @interface IComponentNameProps
-    * @extends {React.HTMLAttributes<HTMLElementType>}
-    */
-   export interface IComponentNameProps {
-     // ...
-   }
-   ```
-
-2. **Prop Documentation**
-
-   ```typescript
-   /**
-    * The size of the component
-    * @default 'medium'
-    */
-   size?: 'small' | 'medium' | 'large'
-   ```
-
-3. **Component Documentation**
-
-   ````typescript
-   /**
-    * ComponentName description - what it does and when to use it.
-    *
-    * @component
-    * @example
-    * ```tsx
-    * <ComponentName prop1="value" prop2={value}>
-    *   Content
-    * </ComponentName>
-    * ```
-    *
-    * @param {IComponentNameProps} props - The props for the ComponentName component
-    * @returns {React.ReactElement} Description of the returned element
-    */
-   export const ComponentName: React.FC<IComponentNameProps> = (props) => {
-     // ...
-   }
-   ````
-
-4. **Helper Function Documentation**
-   ```typescript
-   /**
-    * Helper function description - what it does and when to use it.
-    *
-    * @param {Type} paramName - Description of the parameter
-    * @returns {ReturnType} Description of the return value
-    */
-   function helperFunction(paramName: Type): ReturnType {
-     // ...
-   }
-   ```
 
 ## Guidelines for AI Agents
 
@@ -189,8 +124,6 @@ When working with this codebase, AI agents should:
    - Include appropriate TypeScript types
    - Follow React best practices
    - Ensure components are accessible
-   - Write comprehensive JSDoc comments for IDE support
-   - Ensure JSDoc includes examples, param descriptions, and return values
    - Write tests for all components
 
 4. **Component Development Process**
