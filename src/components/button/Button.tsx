@@ -29,4 +29,3 @@ export const Button: React.FC<IButtonProps> = (props) => {
     </button>
   )
 }
-

@@ -1,17 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { useState } from 'react'
 import { Button } from './Button'
-
-/**
- * @file Button.stories.tsx
- * @description Storybook documentation for the Button component
- *
- * Component stories follow this structure:
- * 1. Meta export with component metadata and documentation
- * 2. Story exports showing different usage scenarios
- * 3. Controls for interactive testing
- * 4. Examples of component variants and configurations
- */
 
 const meta: Meta<typeof Button> = {
   title: 'Components/Button',
@@ -23,37 +11,29 @@ const meta: Meta<typeof Button> = {
 A versatile button component that serves as a primary interaction element in user interfaces.
 
 ## Overview
-
 The Button component is a styled wrapper around the native HTML \`<button>\` element.
-It provides consistent styling, various visual variants, and size options while maintaining
-all the functionality of the standard button element.
+It provides consistent styling, various visual variants, and size options.
 
 ## Features
-
 - Multiple visual variants (default, secondary, alert, outline, ghost, link)
 - Multiple size options (small, default, large, icon)
-- Customizable with theme tokens from \`theme.css\`
+- Customizable with theme tokens
 - Automatic light/dark mode adaptation
 - Accessible focus states
-- Disabled state styling
 - Full support for all native button props
 
 ## Accessibility
-
-- Uses native \`<button>\` element for proper semantics
-- Includes visible focus states
-- Maintains appropriate color contrast ratios
-- Supports keyboard navigation
+- Uses native \`<button>\` element
+- Visible focus states
+- Proper color contrast ratios
+- Keyboard navigation support
 
 ## Usage Guidelines
-
-- Use **Default** buttons for primary actions
-- Use **Secondary** buttons for secondary actions
-- Use **Alert** buttons for destructive actions
-- Use **Outline** and **Ghost** buttons for less prominent actions
-- Use **Link** buttons for navigation-like actions within the page
-- Always provide descriptive text for button actions
-- Consider using icons alongside text for better visual comprehension
+- **Default**: Primary actions
+- **Secondary**: Secondary actions
+- **Alert**: Destructive actions
+- **Outline/Ghost**: Less prominent actions
+- **Link**: Navigation-like actions
         `,
       },
     },
@@ -63,9 +43,7 @@ all the functionality of the standard button element.
     children: {
       control: 'text',
       description: 'Content inside the button',
-      table: {
-        type: { summary: 'ReactNode' },
-      },
+      table: { type: { summary: 'ReactNode' } },
     },
     variant: {
       control: 'select',
@@ -88,9 +66,7 @@ all the functionality of the standard button element.
     onClick: {
       action: 'clicked',
       description: 'Function called when button is clicked',
-      table: {
-        type: { summary: '() => void' },
-      },
+      table: { type: { summary: '() => void' } },
     },
     type: {
       control: 'select',
@@ -104,9 +80,7 @@ all the functionality of the standard button element.
     className: {
       control: 'text',
       description: 'Additional CSS class names',
-      table: {
-        type: { summary: 'string' },
-      },
+      table: { type: { summary: 'string' } },
     },
   },
   tags: ['autodocs'],
@@ -115,37 +89,13 @@ all the functionality of the standard button element.
 export default meta
 type Story = StoryObj<typeof Button>
 
-/**
- * Default button with no custom props.
- */
 export const Default: Story = {
   args: {
     children: 'Button',
   },
 }
 
-/**
- * All available button variants.
- */
 export const Variants: Story = {
-  render: () => (
-    <div
-      style={{
-        display: 'flex',
-        gap: '1rem',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-      }}
-    >
-      <Button>Default</Button>
-      <Button variant="secondary">Secondary</Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button variant="alert">Alert</Button>
-      <Button variant="outline">Outlined</Button>
-      <Button variant="link">Link</Button>
-      <Button disabled={true}>Disabled</Button>
-    </div>
-  ),
   parameters: {
     docs: {
       description: {
@@ -153,19 +103,20 @@ export const Variants: Story = {
       },
     },
   },
-}
-
-/**
- * All available button sizes.
- */
-export const Sizes: Story = {
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Default</Button>
-      <Button size="lg">Large</Button>
+    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
+      <Button>Default</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="alert">Alert</Button>
+      <Button variant="outline">Outlined</Button>
+      <Button variant="link">Link</Button>
+      <Button disabled>Disabled</Button>
     </div>
   ),
+}
+
+export const Sizes: Story = {
   parameters: {
     docs: {
       description: {
@@ -173,25 +124,16 @@ export const Sizes: Story = {
       },
     },
   },
-}
-
-/**
- * Icon button example.
- */
-export const IconButton: Story = {
   render: () => (
     <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <Button size="icon" aria-label="Settings">
-        ⚙️
-      </Button>
-      <Button size="icon" aria-label="Add">
-        +
-      </Button>
-      <Button size="icon" variant="ghost" aria-label="Close">
-        ×
-      </Button>
+      <Button size="sm">Small</Button>
+      <Button size="md">Default</Button>
+      <Button size="lg">Large</Button>
     </div>
   ),
+}
+
+export const IconButton: Story = {
   parameters: {
     docs: {
       description: {
@@ -199,16 +141,16 @@ export const IconButton: Story = {
       },
     },
   },
+  render: () => (
+    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <Button size="icon" aria-label="Settings">⚙️</Button>
+      <Button size="icon" aria-label="Add">+</Button>
+      <Button size="icon" variant="ghost" aria-label="Close">×</Button>
+    </div>
+  ),
 }
 
-/**
- * With event handlers example.
- */
 export const WithEvents: Story = {
-  args: {
-    children: 'Click Me',
-    onClick: () => alert('Button clicked!'),
-  },
   parameters: {
     docs: {
       description: {
@@ -216,17 +158,13 @@ export const WithEvents: Story = {
       },
     },
   },
+  args: {
+    children: 'Click Me',
+    onClick: () => console.info('Button clicked!'),
+  },
 }
 
-/**
- * Full-width example.
- */
 export const FullWidth: Story = {
-  render: () => (
-    <div style={{ width: '100%', maxWidth: '300px' }}>
-      <Button style={{ width: '100%' }}>Full Width Button</Button>
-    </div>
-  ),
   parameters: {
     docs: {
       description: {
@@ -234,34 +172,25 @@ export const FullWidth: Story = {
       },
     },
   },
+  render: () => (
+    <div style={{ width: '100%', maxWidth: '300px' }}>
+      <Button style={{ width: '100%' }}>Full Width Button</Button>
+    </div>
+  ),
 }
 
-/**
- * Interactive example with loading state.
- */
 export const WithLoadingState: Story = {
-  render: () => {
-    const [loading, setLoading] = useState(false)
-
-    const handleClick = () => {
-      setLoading(true)
-      setTimeout(() => setLoading(false), 2000)
-    }
-
-    return (
-      <Button
-        onClick={handleClick}
-        disabled={loading}
-      >
-        {loading ? 'Loading...' : 'Click to Load'}
-      </Button>
-    )
-  },
   parameters: {
     docs: {
       description: {
-        story: 'Example of a button with loading state management.',
+        story: 'Buttons can represent loading states by disabling the button and changing the content.',
       },
     },
   },
+  render: args => (
+    <div style={{ display: 'flex', gap: '1rem' }}>
+      <Button {...args}>Click to Load</Button>
+      <Button {...args} disabled>Loading...</Button>
+    </div>
+  ),
 }
