@@ -135,7 +135,7 @@ async function selectComponents(
  * Get the target directory from config or by prompting the user
  */
 async function getTargetDirectory(): Promise<string> {
-  const configPath = path.join(process.cwd(), '.bizkitrc.json')
+  const configPath = path.join(process.cwd(), 'bazekitrc.json')
 
   if (fs.existsSync(configPath)) {
     try {

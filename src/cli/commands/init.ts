@@ -118,7 +118,7 @@ async function setupProjectStructure(config: InitAnswers): Promise<void> {
   await addImportToCssFile(mainCssPath, `@import url('${relativeImportPath}');`)
   
   // Create config file
-  const configFilePath = path.join(cwd, '.bizkitrc.json')
+  const configFilePath = path.join(cwd, 'bazekitrc.json')
   const configData = {
     componentDir: config.componentDir,
     mainFilePath: config.mainFilePath,
