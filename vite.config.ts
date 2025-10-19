@@ -15,10 +15,10 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime', '@base-ui-components/react'],
       output: {
         globals: {
-          react: 'React',
-          reactDom: 'ReactDOM',
+          react: 'react',
+          reactDom: 'react-dom',
           reactJsxRuntime: 'react/jsx-runtime',
-          baseUiComponentsReact: 'BaseUIComponentsReact',
+          baseUiComponentsReact: '@base-ui-components/react',
         },
       },
     },

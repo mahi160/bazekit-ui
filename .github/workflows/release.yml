@@ -6,6 +6,11 @@ on:
       - prod
       - next
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run semantic-release in dry-run mode'
+        required: false
+        default: 'false'
 
 jobs:
   release:
@@ -35,7 +40,15 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      - name: Release (Dry Run)
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run
+
       - name: Release
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.dry_run != 'true' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
