@@ -2,7 +2,8 @@
   "name": "bizkit",
   "type": "module",
   "version": "0.0.0",
-  "private": true,
+    "private": false,
+    "publishConfig": { "access": "public" },
   "sideEffects": false,
   "exports": {
     ".": {
