@@ -1,3 +1,37 @@
 .avatar {
-  /* Base styles */
+  position: relative;
+  display: flex;
+  inline-size: 32px;
+  block-size: 32px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avatarImage {
+  inline-size: 100%; 
+  block-size: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.avatarFallback {
+  display: flex;
+  inline-size: 100%;
+  block-size: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background);
+  border-radius: 50%;
+  font-size: 14px;
+  color: var(--foreground);
+}
+
+.avatarGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > .avatar:not(:first-child) {
+    margin-inline-start: -12px;
+  }
 }
