@@ -8,8 +8,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'Bizkit UI',
-      fileName: format => `bizkit-ui.${format}.js`,
+      name: 'Bazekit UI',
+      fileName: format => `bazekit-ui.${format}.js`,
     },
     rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', '@base-ui-components/react'],
