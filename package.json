@@ -1,5 +1,5 @@
 {
-  "name": "bizkit",
+  "name": "@bizkit/ui",
   "type": "module",
   "version": "0.0.0",
   "private": false,
