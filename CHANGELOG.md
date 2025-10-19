@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/mahi160/bizkit-ui/compare/v1.0.0...v1.0.1) (2025-10-19)
+
+### Bug Fixes
+
+* border color ([#1](https://github.com/mahi160/bizkit-ui/issues/1)) ([c65327e](https://github.com/mahi160/bizkit-ui/commit/c65327e660139be2addbac8fa2778f640a9939f3))
+
 ## 1.0.0 (2025-10-19)
 
 ### Features
