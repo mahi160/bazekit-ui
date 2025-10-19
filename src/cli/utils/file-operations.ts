@@ -1,6 +1,16 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+// Common file types and patterns
+export const FILE_PATTERNS = {
+  TYPESCRIPT: /\.tsx?$/,
+  JAVASCRIPT: /\.jsx?$/,
+  CSS: /\.css$/,
+  SCSS: /\.scss$/,
+  TESTS: /\.test\.|\.spec\./,
+  STORIES: /\.stories\./,
+}
+
 /**
  * Creates a directory if it doesn't exist
  * @param dirPath Path to the directory to create
@@ -63,9 +73,9 @@ export async function copyDirectory(source: string, destination: string): Promis
  * @throws Error if directory copy fails
  */
 export async function copyDirectoryWithFilter(
-  source: string, 
-  destination: string, 
-  excludePatterns: RegExp[] = []
+  source: string,
+  destination: string,
+  excludePatterns: RegExp[] = [],
 ): Promise<void> {
   await createDirectory(destination)
   const entries = await fs.promises.readdir(source, { withFileTypes: true })
@@ -97,6 +107,17 @@ export async function copyDirectoryWithFilter(
  */
 export async function readFile(filePath: string): Promise<string> {
   return await fs.promises.readFile(filePath, 'utf8')
+}
+
+/**
+ * Reads and parses a JSON file
+ * @param filePath Path to the JSON file
+ * @returns Parsed JSON content
+ * @throws Error if file read or JSON parsing fails
+ */
+export async function readJsonFile<T = unknown>(filePath: string): Promise<T> {
+  const content = await readFile(filePath)
+  return JSON.parse(content) as T
 }
 
 /**
