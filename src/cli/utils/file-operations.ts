@@ -56,6 +56,40 @@ export async function copyDirectory(source: string, destination: string): Promis
 }
 
 /**
+ * Copies a directory recursively with file filtering
+ * @param source Source directory path
+ * @param destination Destination directory path
+ * @param excludePatterns Array of regex patterns for files to exclude
+ * @throws Error if directory copy fails
+ */
+export async function copyDirectoryWithFilter(
+  source: string, 
+  destination: string, 
+  excludePatterns: RegExp[] = []
+): Promise<void> {
+  await createDirectory(destination)
+  const entries = await fs.promises.readdir(source, { withFileTypes: true })
+
+  for (const entry of entries) {
+    const srcPath = path.join(source, entry.name)
+    const destPath = path.join(destination, entry.name)
+
+    // Skip files that match the exclude patterns
+    const shouldExclude = excludePatterns.some(pattern => pattern.test(entry.name))
+    if (shouldExclude) {
+      continue
+    }
+
+    if (entry.isDirectory()) {
+      await copyDirectoryWithFilter(srcPath, destPath, excludePatterns)
+    }
+    else {
+      await copyFile(srcPath, destPath)
+    }
+  }
+}
+
+/**
  * Reads the content of a file
  * @param filePath Path to the file
  * @returns The file content as a string
