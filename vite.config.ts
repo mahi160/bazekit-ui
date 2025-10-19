@@ -11,7 +11,7 @@ export default defineConfig({
       name: 'Bizkit UI',
       fileName: format => `bizkit-ui.${format}.js`,
     },
-    rolldownOptions: {
+    rollupOptions: {
       external: ['react', 'react-dom', 'react/jsx-runtime', '@base-ui-components/react'],
       output: {
         globals: {
