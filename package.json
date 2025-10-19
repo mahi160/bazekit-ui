@@ -1,5 +1,5 @@
 {
-  "name": "@bizkit/ui",
+  "name": "@bazekit/ui",
   "type": "module",
   "version": "1.0.1",
   "private": false,
@@ -10,13 +10,13 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/bizkit-ui.es.js",
-      "require": "./dist/bizkit-ui.umd.js"
+      "import": "./dist/bazekit-ui.es.js",
+      "require": "./dist/bazekit-ui.umd.js"
     },
     "./dist/index.css": "./dist/index.css"
   },
-  "main": "./dist/bizkit-ui.umd.js",
-  "module": "./dist/bizkit-ui.es.js",
+  "main": "./dist/bazekit-ui.umd.js",
+  "module": "./dist/bazekit-ui.es.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
