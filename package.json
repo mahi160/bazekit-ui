@@ -41,6 +41,7 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
+    "@types/inquirer": "^9.0.9",
     "@types/node": "^24.8.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
@@ -66,5 +67,10 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "commander": "^14.0.1",
+    "inquirer": "^12.10.0"
   }
 }
