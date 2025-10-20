@@ -1,6 +1,6 @@
-# Bizkit Component Development Guidelines
+# Bazekit Component Development Guidelines
 
-This document outlines standards and best practices for developing components in the Bizkit design system.
+This document outlines standards and best practices for developing components in the bazekit design system.
 
 ## Component Structure
 
@@ -37,7 +37,6 @@ component-name/
     - Support both light and dark themes
     - Prefer CSS logical properties (e.g., padding-inline, padding-block, inline-size, block-size) instead of physical properties when possible.
     - Use CSS nesting for states, variants, and descendant selectors to keep code organized.
-
 
 3. **Component Tests (ComponentName.test.tsx)**
    - Test rendering without errors
@@ -114,4 +113,4 @@ Each component's Storybook documentation should include:
    5. Create Storybook documentation
    6. Review against guidelines before submission
 
-By following these guidelines, we ensure consistent, high-quality components throughout the Bizkit design system.
+By following these guidelines, we ensure consistent, high-quality components throughout the bazekit design system.
