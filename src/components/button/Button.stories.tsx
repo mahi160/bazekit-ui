@@ -5,47 +5,23 @@ const meta: Meta<typeof Button> = {
   title: 'Components/Button',
   component: Button,
   parameters: {
+    layout: 'centered',
     docs: {
       description: {
-        component: `
-A versatile button component that clicks, clacks, and occasionally gets stuck in Jell-O.
-
-## Overview
-The Button is your go-to for all things clickable. It's a styled wrapper around the native HTML \`<button>\` element, but with more personality than a beet farmer. It provides consistent styling, various visual variants, and size options for every occasion, from a "that's what she said" to a "Bears, Beets, Battlestar Galactica."
-
-## Features
-- **Variants for Every Mood**: From 'default' (classic Jim Halpert smirk) to 'alert' (Dwight discovering a stapler in Jell-O).
-- **Sizes for Every Situation**: 'small' (a subtle glance at the camera), 'default' (a standard Dundie Award), and 'large' (Michael's "World's Best Boss" mug).
-- **Theme-Ready**: Adapts to light and dark modes faster than Creed changes his identity.
-- **Accessible**: So easy to use, even Kevin could do it. Probably.
-- **Native Props**: All the power of a regular button, but with the spirit of Dunder Mifflin.
-
-## Accessibility
-- Built on a native \`<button>\` element, because some things are perfect as they are.
-- Clear focus states, so you always know where you're clicking.
-- Keyboard-friendly, for all the power users out there.
-
-## Usage Guidelines
-- **Default**: For your everyday, run-of-the-mill "that's what she said."
-- **Secondary**: When you need a solid backup plan, like Jim's pranks.
-- **Alert**: For those "NO, GOD, PLEASE, NO!" moments.
-- **Outline/Ghost**: For actions that are more subtle, like Pam's art.
-- **Link**: When you need to hyperlink to your beet farm.
-        `,
+        component: `\nThe **Button** component offers a consistent, accessible trigger for user actions. It enhances the native <button> element with design system variants, sizing, and theme alignment.\n\n## Overview\nButtons represent primary or secondary actions, confirmations, navigational intents, or contextual utilities. Proper hierarchy and contrast ensure rapid recognition and reduce decision friction.\n\n## Key Features\n- **Variants**: Communicate semantic intent (primary, secondary, alert, subtle, link).\n- **Sizes**: Optimize ergonomics across dense interfaces (sm, md, lg, icon).\n- **State Styling**: Hover, focus, active, disabled, and high-contrast theme support.\n- **Flexible Content**: Text, icons, or both; icon-only requires \`aria-label\`.\n- **Accessible Base**: Keyboard operable, announces role and disabled state.\n\n## Usage Guidelines\n- Use a single primary button per view to emphasize core progression.\n- Reserve alert/destructive variants for irreversible or high-impact operations.\n- Employ subtle or ghost variants for low-emphasis adjacent actions.\n- Maintain sufficient label clarity—avoid ambiguous verbs.\n\n## Accessibility\n- Focus ring visibility ensures keyboard discoverability.\n- Disabled buttons should not capture focus and must convey non-interactivity visually.\n- Provide \`aria-label\` for icon-only configurations.\n\n## Example\nDemonstration examples below use phrases and character references from *The Big Bang Theory* for illustrative labeling (e.g., "Bazinga" for a primary action).\n        `,
       },
     },
-    layout: 'centered',
   },
   argTypes: {
     children: {
       control: 'text',
-      description: 'Content inside the button',
+      description: 'Content rendered inside the button',
       table: { type: { summary: 'ReactNode' } },
     },
     variant: {
       control: 'select',
       options: ['default', 'secondary', 'alert', 'outline', 'ghost', 'link'],
-      description: 'Visual style variant of the button',
+      description: 'Visual style variant',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'default' },
@@ -54,7 +30,7 @@ The Button is your go-to for all things clickable. It's a styled wrapper around 
     size: {
       control: 'select',
       options: ['sm', 'md', 'lg', 'icon'],
-      description: 'Size variant of the button',
+      description: 'Button size variant',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'md' },
@@ -62,13 +38,13 @@ The Button is your go-to for all things clickable. It's a styled wrapper around 
     },
     onClick: {
       action: 'clicked',
-      description: 'Function called when button is clicked',
+      description: 'Click event handler',
       table: { type: { summary: '() => void' } },
     },
     type: {
       control: 'select',
       options: ['button', 'submit', 'reset'],
-      description: 'HTML button type attribute',
+      description: 'Native button type attribute',
       table: {
         type: { summary: 'string' },
         defaultValue: { summary: 'button' },
@@ -76,7 +52,7 @@ The Button is your go-to for all things clickable. It's a styled wrapper around 
     },
     className: {
       control: 'text',
-      description: 'Additional CSS class names',
+      description: 'Optional custom CSS class names',
       table: { type: { summary: 'string' } },
     },
   },
@@ -88,7 +64,7 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   args: {
-    children: 'Bears, Beets, Battlestar Galactica',
+    children: 'Bazinga',
   },
 }
 
@@ -96,19 +72,19 @@ export const Variants: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Button comes in different variants to indicate different types of actions.',
+        story: 'Variant styles distinguish semantic and hierarchical intent.',
       },
     },
   },
   render: () => (
-    <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
-      <Button>Michael Scott</Button>
-      <Button variant="secondary">Pam Beesly</Button>
-      <Button variant="ghost">Jim Halpert</Button>
-      <Button variant="alert">Dwight Schrute</Button>
-      <Button variant="outline">Angela Martin</Button>
-      <Button variant="link">Creed Bratton</Button>
-      <Button disabled>Toby Flenderson</Button>
+    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' as const }}>
+      <Button>Bazinga</Button>
+      <Button variant="secondary">Leonard</Button>
+      <Button variant="ghost">Penny</Button>
+      <Button variant="alert">Self-Destruct</Button>
+      <Button variant="outline">Raj</Button>
+      <Button variant="link">Amy Research</Button>
+      <Button disabled>Disabled Action</Button>
     </div>
   ),
 }
@@ -117,15 +93,15 @@ export const Sizes: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Buttons come in all shapes and sizes, just like Michael\'s jokes.Here are a few to get you started.',
+        story: 'Size variants adapt to density requirements and ergonomic targets.',
       },
     },
   },
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-      <Button size="sm">Small</Button>
-      <Button size="md">Default</Button>
-      <Button size="lg">Large</Button>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <Button size="sm">Sheldon</Button>
+      <Button size="md">Leonard</Button>
+      <Button size="lg">Howard</Button>
     </div>
   ),
 }
@@ -134,12 +110,12 @@ export const IconButton: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Icon-only buttons should use the "icon" size and include an aria-label for accessibility.',
+        story: 'Icon-only buttons require an accessible label to describe their action.',
       },
     },
   },
   render: () => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
       <Button size="icon" aria-label="Settings">⚙️</Button>
       <Button size="icon" aria-label="Add">+</Button>
       <Button size="icon" variant="ghost" aria-label="Close">×</Button>
@@ -147,31 +123,17 @@ export const IconButton: Story = {
   ),
 }
 
-export const WithEvents: Story = {
-  parameters: {
-    docs: {
-      description: {
-        story: 'Buttons support all native button event handlers.',
-      },
-    },
-  },
-  args: {
-    children: 'Click Me',
-    onClick: () => console.info('Button clicked!'),
-  },
-}
-
 export const FullWidth: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Buttons can be styled to take the full width of their container.',
+        story: 'Demonstrates a button constrained to container width for layout emphasis.',
       },
     },
   },
   render: () => (
-    <div style={{ width: '100%', maxWidth: '300px' }}>
-      <Button style={{ width: '100%' }}>Full Width Button</Button>
+    <div style={{ width: '100%', maxWidth: 320 }}>
+      <Button style={{ width: '100%' }}>Bazinga Full Width</Button>
     </div>
   ),
 }
@@ -180,14 +142,28 @@ export const WithLoadingState: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Buttons can represent loading states by disabling the button and changing the content.',
+        story: 'Represent loading by disabling interaction and swapping visible label content.',
       },
     },
   },
   render: args => (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <Button {...args}>Click to Load</Button>
-      <Button {...args} disabled>Loading...</Button>
+    <div style={{ display: 'flex', gap: '0.75rem' }}>
+      <Button {...args}>Initiate Sequence</Button>
+      <Button {...args} disabled>Processing…</Button>
     </div>
   ),
+}
+
+export const WithEvents: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story: 'Demonstrates attaching interactive handlers for analytics or logic.',
+      },
+    },
+  },
+  args: {
+    children: 'Trigger Action',
+    onClick: () => console.info('Button clicked'),
+  },
 }

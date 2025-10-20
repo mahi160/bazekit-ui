@@ -1,21 +1,17 @@
-/* Notes:
-   1. Prefer logical properties (padding-inline / block, inline-size, block-size).
-   2. Use CSS nesting for variants, sizes, states. */
-
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  border: 2px solid transparent;
+  gap: calc(var(--spacing) * 2);
+  border: calc(var(--spacing) / 2) solid transparent;
   border-radius: var(--radius);
   cursor: pointer;
   transition:
-    background-color 0.2s,
-    color 0.2s,
-    opacity 0.2s,
-    border-color 0.2s,
-    text-underline-offset 0.1s;
+    background-color var(--duration),
+    color var(--duration),
+    opacity var(--duration),
+    border-color var(--duration),
+    text-underline-offset calc(var(--duration) / 2);
 
   /* Variants */
   &[data-variant='default'] {
@@ -100,9 +96,6 @@
   &:focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 2px;
-  }
-  &:active {
-    transform: scale(0.97);
   }
   &:disabled {
     cursor: not-allowed;

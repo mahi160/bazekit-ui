@@ -18,6 +18,7 @@
   --border: oklch(from var(--content) l c h / 0.2);
 
   --duration: 200ms;
+  --spacing: 0.25rem
 }
 
 body {
