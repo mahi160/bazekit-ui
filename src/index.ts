@@ -25,4 +25,3 @@ export * from './components/table/Table'
 export * from './components/textarea/Textarea'
 export * from './components/toast/Toast'
 export * from './components/toggle/Toggle'
-

@@ -8,7 +8,7 @@ export interface CheckboxProps
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
   const { className, label, id, ...rest } = props
   const combinedClassName = [styles.checkbox, className].filter(Boolean).join(' ')
-  const checkboxId = id || `checkbox-${Math.random().toString(36).substring(2, 9)}`
+  const checkboxId = id
 
   return (
     <div className={styles.container}>

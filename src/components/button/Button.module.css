@@ -21,17 +21,23 @@
   &[data-variant='default'] {
     background-color: var(--primary);
     color: var(--primary-foreground);
-    &:hover { background-color: oklch(from var(--primary) l c h / 0.9); }
+    &:hover {
+      background-color: oklch(from var(--primary) l c h / 0.9);
+    }
   }
   &[data-variant='alert'] {
     background-color: var(--danger);
     color: var(--danger-foreground);
-    &:hover { background-color: oklch(from var(--danger) l c h / 0.9); }
+    &:hover {
+      background-color: oklch(from var(--danger) l c h / 0.9);
+    }
   }
   &[data-variant='secondary'] {
     background-color: oklch(from var(--secondary) l c h / 0.1);
     color: var(--secondary);
-    &:hover { background-color: oklch(from var(--secondary) l c h / 0.2); }
+    &:hover {
+      background-color: oklch(from var(--secondary) l c h / 0.2);
+    }
   }
   &[data-variant='outline'] {
     background-color: transparent;
@@ -46,7 +52,9 @@
   &[data-variant='ghost'] {
     background-color: transparent;
     color: var(--primary);
-    &:hover { background-color: oklch(from var(--primary) l c h / 0.1); }
+    &:hover {
+      background-color: oklch(from var(--primary) l c h / 0.1);
+    }
   }
   &[data-variant='link'] {
     background-color: transparent;
@@ -86,9 +94,16 @@
   }
 
   /* States */
-  &:focus { outline: none; }
-  &:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
-  &:active { transform: scale(0.97); }
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+  &:active {
+    transform: scale(0.97);
+  }
   &:disabled {
     cursor: not-allowed;
     opacity: 0.3;

@@ -8,7 +8,7 @@ export interface RadioProps
 export const Radio: React.FC<RadioProps> = (props) => {
   const { className, label, id, ...rest } = props
   const combinedClassName = [styles.radio, className].filter(Boolean).join(' ')
-  const radioId = id || `radio-${Math.random().toString(36).substring(2, 9)}`
+  const radioId = id
 
   return (
     <div className={styles.container}>

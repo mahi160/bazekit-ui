@@ -28,15 +28,15 @@ component-name/
    - Export both the component and its props interface
 
 2. **Component Styles (ComponentName.module.css)**
-    - Use CSS modules for component-scoped styles
-    - Use CSS variables from theme.css for colors, spacing, etc.
-    - Use data attributes selectors for variants (e.g., `.button[data-variant='default']`)
-    - Group related styles (variants, sizes, states)
-    - Include styles for different states (hover, focus, disabled)
-    - Ensure proper accessibility features
-    - Support both light and dark themes
-    - Prefer CSS logical properties (e.g., padding-inline, padding-block, inline-size, block-size) instead of physical properties when possible.
-    - Use CSS nesting for states, variants, and descendant selectors to keep code organized.
+   - Use CSS modules for component-scoped styles
+   - Use CSS variables from theme.css for colors, spacing, etc.
+   - Use data attributes selectors for variants (e.g., `.button[data-variant='default']`)
+   - Group related styles (variants, sizes, states)
+   - Include styles for different states (hover, focus, disabled)
+   - Ensure proper accessibility features
+   - Support both light and dark themes
+   - Prefer CSS logical properties (e.g., padding-inline, padding-block, inline-size, block-size) instead of physical properties when possible.
+   - Use CSS nesting for states, variants, and descendant selectors to keep code organized.
 
 3. **Component Tests (ComponentName.test.tsx)**
    - Test rendering without errors

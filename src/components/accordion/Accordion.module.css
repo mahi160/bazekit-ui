@@ -16,7 +16,9 @@
 }
 
 /* Accordion trigger */
-.accordionTriggerHeader { display: flex; }
+.accordionTriggerHeader {
+  display: flex;
+}
 
 .accordionTrigger {
   display: flex;
@@ -36,7 +38,9 @@
   outline: none;
   transition: all 0.2s;
 
-  &:hover { text-decoration: underline; }
+  &:hover {
+    text-decoration: underline;
+  }
   &:focus-visible {
     border-color: var(--focus);
     box-shadow: 0 0 0 3px var(--focus);
@@ -55,7 +59,9 @@
     transform: translateY(0.125rem);
     transition: transform var(--duration) ease-out;
   }
-  &[data-panel-open] .chevronIcon { transform: translateY(0.125rem) rotate(180deg); }
+  &[data-panel-open] .chevronIcon {
+    transform: translateY(0.125rem) rotate(180deg);
+  }
 }
 
 /* Accordion panel */
@@ -65,7 +71,9 @@
   block-size: var(--accordion-panel-height);
   transition: block-size var(--duration) ease-out;
   &[data-starting-style],
-  &[data-ending-style] { block-size: 0; }
+  &[data-ending-style] {
+    block-size: 0;
+  }
 }
 
 /* Accordion inner content */
