@@ -1,0 +1,15 @@
+{
+  "source": {
+    "type": "github",
+    "url": "https://raw.githubusercontent.com/mahi160/bazekit-ui",
+    "branch": "main",
+    "basePath": "src/components"
+  },
+  "components": {
+    "button": {
+      "folder": "button",
+      "files": ["Button.tsx", "Button.module.css"],
+      "dependencies": ["@base-ui-components/react"]
+    }
+  }
+}
